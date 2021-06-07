@@ -5,20 +5,23 @@ const mongoose = require('mongoose')
 
 const app = express()
 
-app.use(express.json({extended: true}))
+//Регистрация роута: Префикс пути '/api/sensor'; И сам роут
+    //require динамический
+
+app.use('/api/sensor', require('./routes/sensor.routes'))
+
+//app.use(express.json({extended: true}))
 
 //Получаем порт из файла конфига default.json
 const PORT = config.get('port') || 5000
 
+//Обернутый connect в функцию с async await
 async function start(){
     try {
-        //Подключение к Mongo через промис
+        //Подключение к Mongo
         await mongoose.connect(config.get('mongoUri'), {
             //эти параметры нужны чтобы mongoose.connect успешно работал
-
-            //mongoose подсказал
             useNewUrlParser: true,
-
             useUnifiedTopology: true,
             useCreateIndex: true
         })
