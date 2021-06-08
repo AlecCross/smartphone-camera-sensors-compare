@@ -5,11 +5,13 @@ const router = Router()
 
 router.post('/add', async (req, res) => {
     try {
+        console.log('Body', req.body)
+
         const baseUrl = config.get('baseUrl')
-        const {manufacturer, model} = req.body
+        const {manufacturer, model, pixelSize, heightPixels, widthPixels} = req.body
 
         const sensor = new Sensor({
-            manufacturer, model
+            manufacturer, model, pixelSize, heightPixels, widthPixels
         })
         await sensor.save()
         res.status(201).json({ sensor })

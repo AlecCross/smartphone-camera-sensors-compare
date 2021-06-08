@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 
 const app = express()
 
+app.use(express.json({extended: true}))
+
 //Регистрация роута: Префикс пути '/api/sensor'; И сам роут
     //require динамический
 
