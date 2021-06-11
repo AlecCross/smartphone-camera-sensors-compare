@@ -68,15 +68,7 @@ export const CreatePage = () =>{
                         />
                         <label htmlFor="pixelSize">Размер пикселя</label>
                     </div>
-                    <div className="input-field"><input
-                        placeholder="Высота (пиксели)"
-                        id="heightPixels"
-                        type="text"
-                        name="heightPixels"
-                        onChange={changeHandler}
-                    />
-                        <label htmlFor="heightPixels">Высота</label>
-                    </div>
+
                    <div className="input-field">
                        <input
                            placeholder="Ширина (пиксели)"
@@ -87,6 +79,15 @@ export const CreatePage = () =>{
                        />
                        <label htmlFor="widthPixels">Ширина</label>
                    </div>
+                    <div className="input-field"><input
+                        placeholder="Высота (пиксели)"
+                        id="heightPixels"
+                        type="text"
+                        name="heightPixels"
+                        onChange={changeHandler}
+                    />
+                        <label htmlFor="heightPixels">Высота</label>
+                    </div>
                 </div>
                 <div className="card-action">
                     <button className="btn white grey-text"

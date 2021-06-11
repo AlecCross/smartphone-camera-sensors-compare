@@ -17,7 +17,7 @@ router.post('/add', async (req, res) => {
         res.status(201).json({ sensor })
 
     }catch (e){
-        res.status(500).json({message: 'Опаньки в sensor/add'})
+        res.status(500).json({message: 'Опаньки в sensor/add \n' + e.message})
     }
 })
 

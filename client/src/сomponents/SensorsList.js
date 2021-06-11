@@ -15,9 +15,9 @@ export const SensorsList = ({sensors}) => {
                 <th>№</th>
                 <th>Производитель</th>
                 <th>Модель</th>
-                {/*<th>Размер пикселя</th>*/}
-                {/*<th>Высота</th>*/}
-                {/*<th>Ширина</th>*/}
+                <th>Размер пикселя</th>
+                <th>Ширина</th>
+                <th>Высота</th>
             </tr>
             </thead>
 
@@ -29,6 +29,9 @@ export const SensorsList = ({sensors}) => {
                         <td>{index + 1}</td>
                         <td>{sensor.manufacturer}</td>
                         <td>{sensor.model}</td>
+                        <td>{sensor.pixelSize}</td>
+                        <td>{sensor.widthPixels}</td>
+                        <td>{sensor.heightPixels}</td>
                         {/*<td>*/}
                         {/*    <Link to={`/detail/${link._id}`}>Открыть</Link>*/}
                         {/*</td>*/}
