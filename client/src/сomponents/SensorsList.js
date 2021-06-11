@@ -12,6 +12,7 @@ export const SensorsList = ({sensors}) => {
         <table>
             <thead>
             <tr>
+                <th>№</th>
                 <th>Производитель</th>
                 <th>Модель</th>
                 {/*<th>Размер пикселя</th>*/}

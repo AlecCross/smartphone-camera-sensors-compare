@@ -21,7 +21,7 @@ router.post('/add', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const sensors = await Sensor.find()//Скорее всего будет логика поиска по вводу.
         //Если пустой ввод то показать все,
