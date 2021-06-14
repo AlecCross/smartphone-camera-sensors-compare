@@ -4,7 +4,7 @@ import {Loader} from "../сomponents/Loader";
 import {SensorsList} from "../сomponents/SensorsList";
 
 export const ComparisonPage = () =>{
-    const model = '78'
+    const model = '3'
 
     const [sensors, setSensors] = useState([])
     const {loading, request} = useHttp()

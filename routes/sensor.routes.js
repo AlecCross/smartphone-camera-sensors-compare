@@ -47,13 +47,22 @@ router.get('/:model', async (req, res) => {
     const paramModel = req.params.model
     console.log('/:model2 paramModel: '+paramModel)
 
+    let MAX_SEARCH_SUGGESTIONS = 5
+    let inter = 0
+
     try {
         const param = req.params["model"];
-        const paramFilter = `\u002F${param}\u002F`
+        //const paramFilter = `\u002F${param}\u002F`
         const paramRegex = {'$regex': param}
         const sensors = await Sensor.find({model: paramRegex})
 
-        res.json(sensors)
+        let results = []
+        while (results.length < MAX_SEARCH_SUGGESTIONS){
+            if (sensors[inter] === undefined) break
+            else results.push(sensors[inter++])
+        }
+
+        res.json(results)
     }catch (e){
         res.status(500).json({message: 'Опаньки в sensor/model'})
     }
