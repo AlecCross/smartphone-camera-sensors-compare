@@ -32,12 +32,30 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/id', async (req, res) => {
+// router.get('/:id', async (req, res) => {
+//     try {
+//         const sensor = await Sensor.findById(req.params.id)
+//
+//         res.json(sensor)
+//     }catch (e){
+//         res.status(500).json({message: 'Опаньки в sensor/id'})
+//     }
+// })
+
+router.get('/:model', async (req, res) => {
+    debugger
+    const paramModel = req.params.model
+    console.log('/:model2 paramModel: '+paramModel)
+
     try {
-        const sensor = await Sensor.findById(req.params.id)
-        res.json(sensor)
+        const param = req.params["model"];
+        const paramFilter = `\u002F${param}\u002F`
+        const paramRegex = {'$regex': param}
+        const sensors = await Sensor.find({model: paramRegex})
+
+        res.json(sensors)
     }catch (e){
-        res.status(500).json({message: 'Опаньки в sensor/id'})
+        res.status(500).json({message: 'Опаньки в sensor/model'})
     }
 })
 
