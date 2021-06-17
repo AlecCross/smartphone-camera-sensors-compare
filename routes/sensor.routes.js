@@ -45,7 +45,7 @@ router.get('/', async (req, res) => {
 router.get('/:model', async (req, res) => {
     debugger
     const paramModel = req.params.model
-    console.log('/:model2 paramModel: '+paramModel)
+    console.log('/:model paramModel: '+paramModel)
 
     let MAX_SEARCH_SUGGESTIONS = 5
     let inter = 0
