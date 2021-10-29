@@ -8,7 +8,6 @@ import {Navbar} from "./сomponents/Navbar";
 
 export  const useRoutes = () => {
 
-    //Допилить функционал доступа к Create
     return(
         <div>
             <Navbar></Navbar>
@@ -26,7 +25,7 @@ export  const useRoutes = () => {
                 <Route path="/sensors" exact>
                     <SensorsPage/>
                 </Route>
-                <Redirect to = "/"/>
+                <Redirect to = "/comparison"/>
             </Switch>
         </div>
     )

@@ -14,14 +14,8 @@ export const SearchedSensors = ({setSensor}) =>{
 
     // console.log('ComparisonPage model '+model)
     const changeHandler = event => {
-        if (event.target.value){
-            // const fetched = await request(`/api/sensor/${model}`, 'GET', null, {})
-            // setSensors(fetched)
-            fetch(`/api/sensor/${event.target.value}`, {method: 'get'})
-                .then(res => res.json()).then(result => setSensors(result))
-
-        }
-        else setSensors([])
+        fetch(`/api/sensor/${event.target.value}`, {method: 'get'})
+            .then(res => res.json()).then(result => setSensors(event.target.value ? result : {}))
     }
 
 
